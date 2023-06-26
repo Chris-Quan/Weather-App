@@ -1,8 +1,8 @@
 let weather = {
-    apiKey: "OPENWEATHER API KEY HERE",
+    apiKey: "4df01172b9499a330236ec3f4eb073fc",
     fetchWeather: function (city){
         fetch(
-            "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + this.apiKey
+            "http://api.openweathermap.org/data/2.5/weather?q=" + city +"&units=metric&appid=" + this.apiKey
         )
         .then((response) => response.json())
         .then((data) => this.displayWeather(data));
@@ -20,5 +20,20 @@ let weather = {
         document.querySelector(".temp").innerText = temp + "°C";
         document.querySelector(".humidity").innerText = "Humidity: " + humidity + "%";
         document.querySelector(".wind").innerText = "Wind Speed: " + speed + "km/h";
+        document.querySelector(".weather").classList.remove("loading");
+        document.body.style.backgroundImage ="url('https://source.unsplash.com/1600x900/?city of" + name + "')";
+    },
+    search: function (){
+        this.fetchWeather(document.querySelector(".search-bar").value);
+
+        
     }
-}
+};
+
+document.querySelector(".search button").addEventListener("click", function () {
+    weather.search();
+  });
+
+
+  weather.fetchWeather("Toronto")
+  

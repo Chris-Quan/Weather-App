@@ -6,17 +6,13 @@ body {
   margin: 0;
   font-family: 'Open Sans', sans-serif;
   background: #222;
-
+  background-image: url('https://source.unsplash.com/1600x900/?landscape');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   font-size: 120%;
 }
 
- body {
-  background-image: url('https://source.unsplash.com/1600x900/?landscape');
-  background-repeat: no-repeat;
-  background-size: 100%;
-  background-position: center;
- } 
- 
 
 .card {
   background: #000000d0;
@@ -75,4 +71,20 @@ h1.temp {
 
 .description {
   text-transform: capitalize;
+  margin-left: 5px;
+}
+
+.weather.loading {
+  visibility: hidden;
+  max-height: 20px;
+  position: relative;
+}
+
+.weather.loading:after{
+  visibility: visible;
+  content:"Loading...";
+  color: white;
+  position: absolute;
+  top: 0;
+  left:20px;
 }
