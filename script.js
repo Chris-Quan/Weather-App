@@ -1,9 +1,5 @@
-require('dotenv').config();
-const apiKey = process.env.openweather;
-
 let weather = {
-    require('dotenv').config();
-    const apiKey = process.env.openweather;
+    apiKey: "api key here",
     fetchWeather: function (city){
         fetch(
             "http://api.openweathermap.org/data/2.5/weather?q=" + city +"&units=metric&appid=" + this.apiKey
