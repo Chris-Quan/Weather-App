@@ -1,3 +1,3 @@
 # Weather-App
 
-<img src="websiteSnapshot.png">
+<img src="WeatherAppSnapshot.jpeg">
